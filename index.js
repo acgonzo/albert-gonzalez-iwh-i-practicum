@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
   try {
     const response = await hubspot.get(`/crm/v3/objects/${CUSTOM_OBJECT}`, {
       params: {
-        properties: 'name,device',  // FIXED: Include both properties
+        properties: 'name,device,value',  // missed third property
         limit: 100
       }
     });
@@ -56,12 +56,13 @@ app.get('/update-cobj', (req, res) => {
 // ROUTE 3: Form POST
 app.post('/update-cobj', async (req, res) => {
   try {
-    const { name, device } = req.body;
+    const { name, device, value } = req.body;
 
     const payload = {
       properties: {
         name: name,
-        device: device
+        device: device,
+        value: value
       }
     };
 
