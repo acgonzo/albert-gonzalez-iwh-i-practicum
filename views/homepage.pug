@@ -21,7 +21,8 @@ html
               td= record.id
               td= record.properties.name
               td= record.properties.device
-              td= record.properties.value
+              td.value(data-label="Value") $#{record.properties.value}
+
 
     else
       p No records found.

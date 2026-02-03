@@ -28,6 +28,13 @@ tr:last-child td {
   border-bottom: none;
 }
 
+/* Right-aligned currency column */
+td.value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 /* Form Styling */
 form {
   max-width: 500px;
@@ -63,6 +70,17 @@ input[type="text"]:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+/* Dollar amount input */
+input[type="number"].currency-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: right;
 }
 
 button[type="submit"] {
